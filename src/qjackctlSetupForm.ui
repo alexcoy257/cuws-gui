@@ -26,15 +26,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>520</height>
+    <width>768</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QJackCtl Setup</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="qjackctl.qrc">:/images/setup1.png</iconset>
+   <iconset resource="qjackctl.qrc">
+    <normaloff>:/images/setup1.png</normaloff>:/images/setup1.png</iconset>
   </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
@@ -46,7 +47,7 @@
       <bool>false</bool>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="SettingsTabPage">
       <attribute name="title">
@@ -58,7 +59,16 @@
          <property name="spacing">
           <number>4</number>
          </property>
-         <property name="margin">
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
           <number>4</number>
          </property>
          <item>
@@ -104,7 +114,8 @@
             <string>&amp;Save</string>
            </property>
            <property name="icon">
-            <iconset resource="qjackctl.qrc">:/images/save1.png</iconset>
+            <iconset resource="qjackctl.qrc">
+             <normaloff>:/images/save1.png</normaloff>:/images/save1.png</iconset>
            </property>
            <property name="autoDefault">
             <bool>false</bool>
@@ -120,7 +131,8 @@
             <string>&amp;Delete</string>
            </property>
            <property name="icon">
-            <iconset resource="qjackctl.qrc">:/images/remove1.png</iconset>
+            <iconset resource="qjackctl.qrc">
+             <normaloff>:/images/remove1.png</normaloff>:/images/remove1.png</iconset>
            </property>
            <property name="autoDefault">
             <bool>false</bool>
@@ -229,7 +241,7 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint">
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>8</width>
                  <height>20</height>
@@ -311,7 +323,7 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint">
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>8</width>
                  <height>20</height>
@@ -472,7 +484,7 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint">
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>8</width>
                  <height>20</height>
@@ -611,7 +623,7 @@
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
-             <property name="sizeHint">
+             <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
                <height>4</height>
@@ -640,7 +652,7 @@
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
-             <property name="sizeHint">
+             <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
                <height>8</height>
@@ -671,7 +683,7 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint">
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>8</width>
                  <height>20</height>
@@ -743,7 +755,16 @@
           <layout class="QGridLayout">
            <item row="0" column="0" colspan="5">
             <layout class="QHBoxLayout">
-             <property name="margin">
+             <property name="leftMargin">
+              <number>8</number>
+             </property>
+             <property name="topMargin">
+              <number>8</number>
+             </property>
+             <property name="rightMargin">
+              <number>8</number>
+             </property>
+             <property name="bottomMargin">
               <number>8</number>
              </property>
              <item>
@@ -768,7 +789,7 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint">
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
                  <height>8</height>
@@ -892,7 +913,7 @@
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
-             <property name="sizeHint">
+             <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
                <height>4</height>
@@ -1021,7 +1042,7 @@
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
-             <property name="sizeHint">
+             <property name="sizeHint" stdset="0">
               <size>
                <width>8</width>
                <height>20</height>
@@ -1067,14 +1088,14 @@
                <property name="specialValueText">
                 <string>(default)</string>
                </property>
-               <property name="singleStep">
-                <number>1</number>
-               </property>
                <property name="minimum">
                 <number>5</number>
                </property>
                <property name="maximum">
                 <number>99</number>
+               </property>
+               <property name="singleStep">
+                <number>1</number>
                </property>
               </widget>
              </item>
@@ -1401,7 +1422,7 @@
                 <bool>false</bool>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>-1</number>
                </property>
               </widget>
              </item>
@@ -1412,7 +1433,7 @@
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
-             <property name="sizeHint">
+             <property name="sizeHint" stdset="0">
               <size>
                <width>8</width>
                <height>20</height>
@@ -1833,12 +1854,12 @@
                </property>
               </widget>
              </item>
-             <item row="6" colspan="3">
+             <item row="6" column="0" colspan="3">
               <spacer>
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
                </property>
-               <property name="sizeHint">
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
                  <height>4</height>
@@ -1853,7 +1874,7 @@
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
-             <property name="sizeHint">
+             <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
                <height>4</height>
@@ -1868,7 +1889,7 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint">
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
                  <height>8</height>
@@ -1907,7 +1928,7 @@
                 <bool>false</bool>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>-1</number>
                </property>
               </widget>
              </item>
@@ -1916,7 +1937,7 @@
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint">
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
                  <height>8</height>
@@ -1931,7 +1952,7 @@
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
-             <property name="sizeHint">
+             <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>
                <height>4</height>
@@ -2035,10 +2056,446 @@
       </layout>
      </widget>
      <widget class="QWidget" name="JacktripTabPage">
-     <attribute name="title">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="title">
        <string>Jacktrip</string>
       </attribute>
-      <layout class="QVBoxLayout">
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="5" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="buttonLayout">
+         <item>
+          <widget class="QPushButton" name="connectButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Connect</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="disconnectButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Disconnect</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="exitButton">
+           <property name="text">
+            <string>Exit</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="addressLabel">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>&amp;Address of server</string>
+         </property>
+         <property name="buddy">
+          <cstring>addressEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="typeLabel">
+         <property name="text">
+          <string>&amp;Run JackTrip as</string>
+         </property>
+         <property name="buddy">
+          <cstring>typeComboBox</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="typeComboBox">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <item>
+          <property name="text">
+           <string>Hub Client</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Hub Server</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Client</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Server</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="ipLabel">
+         <property name="text">
+          <string>Looking up external IP address...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="addressEdit"/>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QTabWidget" name="optionsTabWidget">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>391</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <property name="tabsClosable">
+          <bool>false</bool>
+         </property>
+         <property name="movable">
+          <bool>false</bool>
+         </property>
+         <widget class="QWidget" name="basicTab">
+          <attribute name="title">
+           <string>Basic options</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="3" column="0" colspan="2">
+            <widget class="QCheckBox" name="zeroCheckBox">
+             <property name="text">
+              <string>Set buffer to &amp;zero when underrun occurs</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="autoPatchComboBox">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>Server to clients</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Client loopback</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Client fan out/in but no loopback</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Full Mix</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>No auto patching</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <spacer name="basicVerticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Expanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="autoPatchLabel">
+             <property name="maximumSize">
+              <size>
+               <width>130</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Hub auto&amp;patch mode</string>
+             </property>
+             <property name="buddy">
+              <cstring>autoPatchComboBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="channelLabel">
+             <property name="maximumSize">
+              <size>
+               <width>130</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>&amp;Number of channels</string>
+             </property>
+             <property name="buddy">
+              <cstring>channelSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="channelSpinBox">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="value">
+              <number>2</number>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="aboutLayout">
+             <item>
+              <spacer name="aboutSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="aboutButton">
+               <property name="text">
+                <string>About</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="advancedTab">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <attribute name="title">
+           <string>Advanced options</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="5" column="0">
+            <widget class="QLabel" name="resolutionLabel">
+             <property name="text">
+              <string>Audio &amp;Bit Resolution</string>
+             </property>
+             <property name="buddy">
+              <cstring>resolutionComboBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="clientNameEdit">
+             <property name="maxLength">
+              <number>64</number>
+             </property>
+             <property name="placeholderText">
+              <string>JackTrip</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSpinBox" name="queueLengthSpinBox">
+             <property name="minimum">
+              <number>2</number>
+             </property>
+             <property name="value">
+              <number>12</number>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="connectAudioLayout">
+             <item>
+              <widget class="QCheckBox" name="connectAudioCheckBox">
+               <property name="text">
+                <string>&amp;Connect default audio ports</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="queueLengthLabel">
+             <property name="text">
+              <string>&amp;Queue Buffer Length</string>
+             </property>
+             <property name="buddy">
+              <cstring>queueLengthSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="useDefaultsLayout">
+             <item>
+              <spacer name="useDefaultsSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="useDefaultsButton">
+               <property name="text">
+                <string>Use &amp;Defaults</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="1">
+            <widget class="QComboBox" name="resolutionComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>16</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>24</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>32</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="clientNameLabel">
+             <property name="text">
+              <string>Custom Client &amp;Name</string>
+             </property>
+             <property name="buddy">
+              <cstring>clientNameEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QSpinBox" name="redundancySpinBox">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <spacer name="advancedVerticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="portOffsetLabel">
+             <property name="text">
+              <string>Port &amp;Offset</string>
+             </property>
+             <property name="buddy">
+              <cstring>portOffsetSpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="portOffsetSpinBox">
+             <property name="maximum">
+              <number>999</number>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="redundancyLabel">
+             <property name="text">
+              <string>&amp;Redundancy</string>
+             </property>
+             <property name="buddy">
+              <cstring>redundancySpinBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="remoteNameEdit">
+             <property name="maxLength">
+              <number>64</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="remoteNameLabel">
+             <property name="text">
+              <string>Remote Client Name</string>
+             </property>
+             <property name="buddy">
+              <cstring>remoteNameEdit</cstring>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="OptionsTabPage">
@@ -2061,7 +2518,16 @@
           <bool>true</bool>
          </property>
          <layout class="QGridLayout">
-          <property name="margin">
+          <property name="leftMargin">
+           <number>8</number>
+          </property>
+          <property name="topMargin">
+           <number>8</number>
+          </property>
+          <property name="rightMargin">
+           <number>8</number>
+          </property>
+          <property name="bottomMargin">
            <number>8</number>
           </property>
           <property name="spacing">
@@ -2485,7 +2951,16 @@
           <bool>true</bool>
          </property>
          <layout class="QGridLayout">
-          <property name="margin">
+          <property name="leftMargin">
+           <number>8</number>
+          </property>
+          <property name="topMargin">
+           <number>8</number>
+          </property>
+          <property name="rightMargin">
+           <number>8</number>
+          </property>
+          <property name="bottomMargin">
            <number>8</number>
           </property>
           <property name="spacing">
@@ -2680,7 +3155,7 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint">
+         <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
            <height>4</height>
@@ -2802,7 +3277,16 @@
             <property name="spacing">
              <number>4</number>
             </property>
-            <property name="margin">
+            <property name="leftMargin">
+             <number>4</number>
+            </property>
+            <property name="topMargin">
+             <number>4</number>
+            </property>
+            <property name="rightMargin">
+             <number>4</number>
+            </property>
+            <property name="bottomMargin">
              <number>4</number>
             </property>
             <item>
@@ -2864,7 +3348,7 @@
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint">
+            <property name="sizeHint" stdset="0">
              <size>
               <width>8</width>
               <height>20</height>
@@ -2874,7 +3358,16 @@
           </item>
           <item row="0" column="2" rowspan="2">
            <layout class="QGridLayout">
-            <property name="margin">
+            <property name="leftMargin">
+             <number>4</number>
+            </property>
+            <property name="topMargin">
+             <number>4</number>
+            </property>
+            <property name="rightMargin">
+             <number>4</number>
+            </property>
+            <property name="bottomMargin">
              <number>4</number>
             </property>
             <property name="spacing">
@@ -3066,7 +3559,16 @@
           <bool>true</bool>
          </property>
          <layout class="QGridLayout">
-          <property name="margin">
+          <property name="leftMargin">
+           <number>8</number>
+          </property>
+          <property name="topMargin">
+           <number>8</number>
+          </property>
+          <property name="rightMargin">
+           <number>8</number>
+          </property>
+          <property name="bottomMargin">
            <number>8</number>
           </property>
           <property name="spacing">
@@ -3158,7 +3660,7 @@
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint">
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>20</height>
@@ -3211,7 +3713,7 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint">
+         <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
            <height>4</height>
@@ -3237,7 +3739,16 @@
           <property name="spacing">
            <number>4</number>
           </property>
-          <property name="margin">
+          <property name="leftMargin">
+           <number>8</number>
+          </property>
+          <property name="topMargin">
+           <number>8</number>
+          </property>
+          <property name="rightMargin">
+           <number>8</number>
+          </property>
+          <property name="bottomMargin">
            <number>8</number>
           </property>
           <item>
@@ -3304,7 +3815,7 @@
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint">
+            <property name="sizeHint" stdset="0">
              <size>
               <width>8</width>
               <height>20</height>
@@ -3385,7 +3896,7 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint">
+         <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
            <height>4</height>
@@ -3472,7 +3983,7 @@
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint">
+            <property name="sizeHint" stdset="0">
              <size>
               <width>8</width>
               <height>20</height>
@@ -3541,7 +4052,7 @@
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint">
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>4</height>
@@ -3663,7 +4174,16 @@
        <string>Misc</string>
       </attribute>
       <layout class="QGridLayout">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>4</number>
+       </property>
+       <property name="topMargin">
+        <number>4</number>
+       </property>
+       <property name="rightMargin">
+        <number>4</number>
+       </property>
+       <property name="bottomMargin">
         <number>4</number>
        </property>
        <property name="spacing">
@@ -3684,7 +4204,16 @@
           <bool>true</bool>
          </property>
          <layout class="QGridLayout">
-          <property name="margin">
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
            <number>4</number>
           </property>
           <property name="spacing">
@@ -3694,9 +4223,6 @@
            <layout class="QVBoxLayout">
             <property name="spacing">
              <number>4</number>
-            </property>
-            <property name="margin">
-             <number>0</number>
             </property>
             <item>
              <widget class="QCheckBox" name="StartJackCheckBox">
@@ -3817,9 +4343,6 @@
            <layout class="QVBoxLayout">
             <property name="spacing">
              <number>4</number>
-            </property>
-            <property name="margin">
-             <number>0</number>
             </property>
             <item>
              <widget class="QCheckBox" name="ServerConfigCheckBox">
@@ -3945,7 +4468,7 @@
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint">
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>4</height>
@@ -3975,9 +4498,6 @@
            <layout class="QVBoxLayout">
             <property name="spacing">
              <number>4</number>
-            </property>
-            <property name="margin">
-             <number>0</number>
             </property>
             <item>
              <widget class="QCheckBox" name="LeftButtonsCheckBox">
@@ -4048,7 +4568,7 @@
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
-              <property name="sizeHint">
+              <property name="sizeHint" stdset="0">
                <size>
                 <width>20</width>
                 <height>4</height>
@@ -4092,7 +4612,16 @@
           <bool>true</bool>
          </property>
          <layout class="QGridLayout">
-          <property name="margin">
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
            <number>4</number>
           </property>
           <property name="spacing">
@@ -4103,7 +4632,7 @@
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint">
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>4</height>
@@ -4199,7 +4728,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Apply|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>
