@@ -16,3 +16,5 @@ qrc_*.cpp
 .obj
 .ui
 qjackctl
+*.app
+.vscode

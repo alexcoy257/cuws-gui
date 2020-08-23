@@ -31,7 +31,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Setup</string>
+   <string>QJackCtl Setup</string>
   </property>
   <property name="windowIcon">
    <iconset resource="qjackctl.qrc">:/images/setup1.png</iconset>
@@ -2032,6 +2032,13 @@
          </widget>
         </widget>
        </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="JacktripTabPage">
+     <attribute name="title">
+       <string>Jacktrip</string>
+      </attribute>
+      <layout class="QVBoxLayout">
       </layout>
      </widget>
      <widget class="QWidget" name="OptionsTabPage">
