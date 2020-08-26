@@ -1,11 +1,11 @@
 Makefile
-config.*
+#config.*
 configure
 *.m4
 *.mak
 *.spec
 *.desktop
-*.pri
+#*.pri
 *.qm
 *.o
 *.so

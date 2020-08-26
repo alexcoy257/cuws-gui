@@ -126,6 +126,7 @@ endif ()
 
 
 # Find package modules
+if(UNIX)
 find_package (PkgConfig REQUIRED)
 
 # Check for JACK libraries.
@@ -220,6 +221,69 @@ if (CONFIG_PORTAUDIO)
     set (CONFIG_PORTAUDIO 0)
   endif ()
 endif ()
+endif() #from Windows
+
+if(WIN32)
+  set (CONFIG_JACK 1)
+  include_directories (C:/Program Files\ \(x86\)/Jack/includes/jack)
+  link_directories (C:/Program Files\ \(x86\)/Jack/lib)
+# link_libraries (${JACK_LIBRARIES})
+  set (CMAKE_REQUIRED_LIBRARIES "${JACK_LIBRARIES};${CMAKE_REQUIRED_LIBRARIES}")
+  # Check for jack/statistics.h header.
+  check_include_file (jack/statistics.h HAVE_JACK_STATISTICS_H)
+  if (NOT HAVE_JACK_STATISTICS_H)
+    set (CONFIG_JACK_STATISTICS 0)
+  else ()
+    set (CONFIG_JACK_STATISTICS 1)
+  endif ()
+  # Check for JACK MIDI headers availability.
+  if (CONFIG_JACK_MIDI)
+    check_include_file (jack/midiport.h HAVE_JACK_MIDIPORT_H)
+    if (NOT HAVE_JACK_MIDIPORT_H)
+      set (CONFIG_JACK_MIDI 0)
+    endif ()
+  endif ()
+  # Check for JACK session headers availability.
+  if (CONFIG_JACK_SESSION)
+    check_include_file (jack/session.h HAVE_JACK_SESSION_H)
+    if (NOT HAVE_JACK_SESSION_H)
+      set (CONFIG_JACK_SESSION 0)
+    endif ()
+  endif ()
+  # Check for JACK metadata headers availability.
+  if (CONFIG_JACK_METADATA)
+    check_include_file (jack/metadata.h HAVE_JACK_METADATA_H)
+    if (NOT HAVE_JACK_METADATA_H)
+      set (CONFIG_JACK_METADATA 0)
+    endif ()
+  endif ()
+  if (NOT CONFIG_JACK_METADATA)
+      set (CONFIG_JACK_CV  0)
+      set (CONFIG_JACK_OSC 0)
+  endif ()
+  # Check for jack_transport_query function.
+  check_function_exists (jack_transport_query CONFIG_JACK_TRANSPORT)
+  # Check for jack_is_realtime function.
+  check_function_exists (jack_is_realtime CONFIG_JACK_REALTIME)
+  # Check for jack_get_xrun_delayed_usecs function.
+  check_function_exists (jack_get_xrun_delayed_usecs CONFIG_JACK_XRUN_DELAY)
+  # Check for jack_get_max_delayed_usecs function.
+  check_function_exists (jack_get_max_delayed_usecs CONFIG_JACK_MAX_DELAY)
+  # Check for jack_set_port_rename_callback
+  check_function_exists (jack_set_port_rename_callback CONFIG_JACK_PORT_RENAME)
+  # Check for jack_port_get_aliases function.
+  if (CONFIG_JACK_PORT_ALIASES)
+    check_function_exists (jack_port_get_aliases CONFIG_JACK_PORT_ALIASES)
+  endif ()
+  # Check for jack_get_version_string function.
+  if (CONFIG_JACK_VERSION)
+    check_function_exists (jack_get_version_string CONFIG_JACK_VERSION)
+  endif ()
+  # Check for jack_free function.
+  check_function_exists (jack_free CONFIG_JACK_FREE)
+
+endif ()
+
 
 
 if (APPLE AND CONFIG_COREAUDIO)
