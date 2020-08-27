@@ -37,6 +37,9 @@
 #include "qjackctlAboutForm.h"
 
 #include "qjackctlJackGraph.h"
+
+#include "qjacktrip.h"
+
 #ifdef CONFIG_ALSA_SEQ
 #include "qjackctlAlsaGraph.h"
 #endif
@@ -580,6 +583,14 @@ qjackctlMainForm::qjackctlMainForm (
 	QObject::connect(m_ui.ForwardToolButton,
 		SIGNAL(clicked()),
 		SLOT(transportForward()));
+
+    // JackTrip additions connections
+    QObject::connect(m_ui.JackTripStartToolButton,
+        SIGNAL(clicked()),
+        SLOT(QJackTrip::start()));
+    QObject::connect(m_ui.JackTripStopToolButton,
+        SIGNAL(clicked()),
+        SLOT(QJackTrip::stop()));
 }
 
 
@@ -2146,6 +2157,9 @@ void qjackctlMainForm::updateButtons (void)
 		m_ui.ConnectionsToolButton->setVisible(!m_pSetup->bGraphButton);
 		m_ui.GraphToolButton->setVisible(m_pSetup->bGraphButton);
 		m_ui.PatchbayToolButton->show();
+        m_ui.JackTripStartToolButton->show();
+        m_ui.JackTripStopToolButton->show();
+
 	} else {
 		m_ui.StartToolButton->hide();
 		m_ui.StopToolButton->hide();
@@ -2154,6 +2168,8 @@ void qjackctlMainForm::updateButtons (void)
 		m_ui.GraphToolButton->hide();
 		m_ui.ConnectionsToolButton->hide();
 		m_ui.PatchbayToolButton->hide();
+        m_ui.JackTripStartToolButton->hide();
+        m_ui.JackTripStopToolButton->hide();
 	}
 
 	if (m_pSetup->bRightButtons) {
@@ -2197,6 +2213,8 @@ void qjackctlMainForm::updateButtons (void)
 	m_ui.QuitToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.SetupToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.AboutToolButton->setToolButtonStyle(toolButtonStyle);
+    m_ui.JackTripStartToolButton->setToolButtonStyle(toolButtonStyle);
+    m_ui.JackTripStopToolButton->setToolButtonStyle(toolButtonStyle);
 
 	adjustSize();
 }
@@ -4771,6 +4789,5 @@ bool qjackctlMainForm::resetBuffSize ( jack_nframes_t nframes )
 	resetXrunStats();
 	return true;
 }
-
 
 // end of qjackctlMainForm.cpp

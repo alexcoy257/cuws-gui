@@ -809,7 +809,7 @@ bool UdpDataProtocol::datagramAvailable()
     //Need to use the winsock version of the function for MSG_PEEK
     WSABUF buffer;
     buffer.buf = &c;
-    burre.len = sizeof(c);
+    buffer.len = sizeof(c);
     DWORD n = 0;
     DWORD flags = MSG_PEEK;
     int ret = WSARecv(mSocket, &buffer, 1, &n, &flags, NULL, NULL);

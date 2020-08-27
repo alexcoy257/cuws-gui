@@ -10,6 +10,7 @@ include(src.pri)
 #DEFINES += DEBUG
 
 HEADERS += config.h \
+	qSimpleform.h \
 	qjackctl.h \
 	qjackctlAbout.h \
 	qjackctlAlsaConnect.h \
@@ -40,6 +41,7 @@ HEADERS += config.h \
 	qjackctlSocketForm.h
 
 SOURCES += \
+	qSimpleForm.cpp \
 	qjackctl.cpp \
 	qjackctlAlsaConnect.cpp \
 	qjackctlAlsaGraph.cpp \

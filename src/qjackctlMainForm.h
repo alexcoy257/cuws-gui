@@ -302,7 +302,7 @@ protected:
 private:
 
 	// The Qt-designer UI struct...
-	Ui::qjackctlMainForm m_ui;
+    Ui::qjackctlMainForm m_ui;
 
 	// Instance variables.
 	qjackctlSetup *m_pSetup;
