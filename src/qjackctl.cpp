@@ -36,6 +36,8 @@
 
 #include <QSessionManager>
 
+#include <qjacktrip.h>
+
 #if QT_VERSION < QT_VERSION_CHECK(4, 5, 0)
 namespace Qt {
 const WindowFlags WindowCloseButtonHint = WindowFlags(0x08000000);
@@ -522,6 +524,8 @@ int main ( int argc, char **argv )
 #endif
 	qjackctlApplication app(argc, argv);
 
+
+
 	// Construct default settings; override with command line arguments.
 	qjackctlSetup setup;
 	if (!setup.parse_args(app.arguments())) {
@@ -586,6 +590,8 @@ int main ( int argc, char **argv )
 
 	// Settle this one as application main widget...
 	app.setMainWidget(&w);
+
+
 
 	// Settle session manager shutdown (eg. logoff)...
 	QObject::connect(

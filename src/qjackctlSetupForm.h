@@ -23,6 +23,7 @@
 #define __qjackctlSetupForm_h
 
 #include "ui_qjackctlSetupForm.h"
+#include "qjacktrip.h"
 
 // Forward declarations.
 class qjackctlSetup;
@@ -50,6 +51,11 @@ public:
 	void updateCurrentPreset(const qjackctlPreset& preset);
 	void updateCurrentPreset();
 	bool queryClose();
+    QJackTrip * getQJackTrip();
+
+public slots:
+    void startJacktrip();
+    void stopJacktrip();
 
 protected slots:
 
@@ -128,6 +134,8 @@ private:
 
 	// The Qt-designer UI struct...
 	Ui::qjackctlSetupForm m_ui;
+
+    QJackTrip * theQJackTrip;
 
 	// Instance variables.
 	qjackctlSetup *m_pSetup;

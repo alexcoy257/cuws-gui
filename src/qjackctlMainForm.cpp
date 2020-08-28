@@ -585,12 +585,14 @@ qjackctlMainForm::qjackctlMainForm (
 		SLOT(transportForward()));
 
     // JackTrip additions connections
+    /*
     QObject::connect(m_ui.JackTripStartToolButton,
         SIGNAL(clicked()),
         SLOT(QJackTrip::start()));
     QObject::connect(m_ui.JackTripStopToolButton,
         SIGNAL(clicked()),
         SLOT(QJackTrip::stop()));
+*/
 }
 
 
@@ -703,6 +705,18 @@ bool qjackctlMainForm::setup ( qjackctlSetup *pSetup )
 
 	// Setup form is kind of special (modeless dialog).
 	m_pSetupForm = new qjackctlSetupForm(this);
+    QJackTrip * l_QJackTrip = m_pSetupForm->getQJackTrip();
+
+    QObject::connect(m_ui.JackTripStartToolButton, &QPushButton::released, l_QJackTrip, &QJackTrip::start);
+    QObject::connect(m_ui.JackTripStopToolButton, &QPushButton::released, l_QJackTrip, &QJackTrip::stop);
+    /*
+    QObject::connect(m_ui.JackTripStartToolButton,
+        SIGNAL(clicked()),
+        SLOT(m_pSetupForm->startJackTrip()));
+    QObject::connect(m_ui.JackTripStopToolButton,
+        SIGNAL(clicked()),
+        SLOT(m_pSetupForm->startJackTrip()));
+        */
 
 	// Setup appropriately...
 	m_pMessagesStatusForm->setTabPage(m_pSetup->iMessagesStatusTabPage);

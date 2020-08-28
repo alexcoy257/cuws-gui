@@ -18,3 +18,4 @@ qrc_*.cpp
 qjackctl
 *.app
 .vscode
+.DS_Store

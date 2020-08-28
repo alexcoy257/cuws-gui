@@ -61,9 +61,11 @@ private slots:
     void addressChanged(const QString &address);
     void receivedIP(QNetworkReply *reply);
     void resetOptions();
+    void exit();
+
+public slots:
     void start();
     void stop();
-    void exit();
     
 private:
     void enableUi(bool enabled);
