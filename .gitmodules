@@ -1,0 +1,4 @@
+[submodule "src/qjacktrip"]
+	path = src/qjacktrip
+	url = https://github.com/jacktrip/jacktrip.git
+	branch = qjacktrip
