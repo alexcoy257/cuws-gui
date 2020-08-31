@@ -38,7 +38,7 @@
 
 #include "qjackctlJackGraph.h"
 
-#include "qjacktrip.h"
+#include "qjacktrip/src/qjacktrip.h"
 
 #ifdef CONFIG_ALSA_SEQ
 #include "qjackctlAlsaGraph.h"

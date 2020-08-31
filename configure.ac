@@ -334,7 +334,7 @@ AC_CACHE_CHECK([for Qt library version >= 5.1],
       #endif
    ], ac_cv_qtversion="yes", [
       echo "no; Qt 5.1 or greater is required"
-      exit 1
+      #exit 1
    ])
 ])
 

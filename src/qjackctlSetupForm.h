@@ -23,7 +23,7 @@
 #define __qjackctlSetupForm_h
 
 #include "ui_qjackctlSetupForm.h"
-#include "qjacktrip.h"
+#include "qjacktrip/src/qjacktrip.h"
 
 // Forward declarations.
 class qjackctlSetup;

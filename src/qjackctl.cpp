@@ -36,7 +36,7 @@
 
 #include <QSessionManager>
 
-#include <qjacktrip.h>
+#include <qjacktrip/src/qjacktrip.h>
 
 #if QT_VERSION < QT_VERSION_CHECK(4, 5, 0)
 namespace Qt {

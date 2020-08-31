@@ -1503,6 +1503,7 @@ QJackTrip * qjackctlSetupForm::getQJackTrip(void){
     return theQJackTrip;
 }
 
+
 void qjackctlSetupForm::startJacktrip (void)
 {
     theQJackTrip->start();
@@ -1512,6 +1513,7 @@ void qjackctlSetupForm::stopJacktrip (void)
 {
     theQJackTrip->stop();
 }
+
 
 
 // The display font 1 (big time) selection dialog.
