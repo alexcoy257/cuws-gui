@@ -3,6 +3,7 @@
 TARGET = qjackctl
 
 TEMPLATE = app
+CONFIG += app_bundle
 INCLUDEPATH += .
 
 include(src.pri)
@@ -148,14 +149,15 @@ win32 {
 #******************************
 
 CONFIG += c++11 console
-CONFIG -= app_bundle
+#CONFIG -= app_bundle
 
-CONFIG += qt thread debug_and_release build_all
-CONFIG(debug, debug|release) {
-  TARGET = qjacktrip_debug
-  } else {
-  TARGET = qjacktrip
-  }
+CONFIG += qt thread release build_all
+
+#CONFIG(debug, debug|release) {
+#  TARGET = qjacktrip_debug
+#  } else {
+#  TARGET = qjacktrip
+#  }
 
 QT += gui
 QT += network
@@ -192,7 +194,7 @@ macx {
   QMAKE_CXXFLAGS += -D__MACOSX_CORE__ #-D__UNIX_JACK__ #RtAudio Flags
   QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
   #QMAKE_MAC_SDK = macosx10.9
-  CONFIG -= app_bundle
+  #CONFIG -= app_bundle
   #CONFIG += x86 #ppc #### If you have both libraries installed, you
   # can change between 32bits (x86) or 64bits(x86_64) Change this to go back to 32 bits (x86)
   LIBS += -framework CoreAudio -framework CoreFoundation
