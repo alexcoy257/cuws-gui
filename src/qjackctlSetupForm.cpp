@@ -80,8 +80,8 @@ qjackctlSetupForm::qjackctlSetupForm ( QWidget *pParent )
 	// Setup UI struct...
 	m_ui.setupUi(this);
     m_ui.SetupTabWidget->removeTab(1);
-    theQJackTrip = new QJackTrip(this);
-    m_ui.SetupTabWidget->insertTab(1,theQJackTrip,"Jacktrip");
+    //theQJackTrip = new QJackTrip(this);
+    //m_ui.SetupTabWidget->insertTab(1,theQJackTrip,"Jacktrip");
 
 	// No settings descriptor initially (the caller will set it).
 	m_pSetup = nullptr;

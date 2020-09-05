@@ -38,7 +38,7 @@
 
 #include "qjackctlJackGraph.h"
 
-#include "qjacktrip/src/qjacktrip.h"
+
 
 #ifdef CONFIG_ALSA_SEQ
 #include "qjackctlAlsaGraph.h"
@@ -463,6 +463,7 @@ qjackctlMainForm::qjackctlMainForm (
 	m_pPatchbayForm    = nullptr;
 	m_pGraphForm       = nullptr;
 	m_pSetupForm       = nullptr;
+    m_pQJackTrip       = nullptr;
 
 	// Patchbay rack can be readily created.
 	m_pPatchbayRack = new qjackctlPatchbayRack();
@@ -551,9 +552,11 @@ qjackctlMainForm::qjackctlMainForm (
 	QObject::connect(m_ui.GraphToolButton,
 		SIGNAL(clicked()),
 		SLOT(toggleGraphForm()));
+    /*
 	QObject::connect(m_ui.ConnectionsToolButton,
 		SIGNAL(clicked()),
 		SLOT(toggleConnectionsForm()));
+        */
 	QObject::connect(m_ui.PatchbayToolButton,
 		SIGNAL(clicked()),
 		SLOT(togglePatchbayForm()));
@@ -584,7 +587,7 @@ qjackctlMainForm::qjackctlMainForm (
 		SIGNAL(clicked()),
 		SLOT(transportForward()));
 
-    // JackTrip additions connections
+
     /*
     QObject::connect(m_ui.JackTripStartToolButton,
         SIGNAL(clicked()),
@@ -699,16 +702,32 @@ bool qjackctlMainForm::setup ( qjackctlSetup *pSetup )
 	m_pSessionForm        = new qjackctlSessionForm        (pParent, wflags);
 	m_pConnectionsForm    = new qjackctlConnectionsForm    (pParent, wflags);
 	m_pPatchbayForm       = new qjackctlPatchbayForm       (pParent, wflags);
+    m_pQJackTrip          = new QJackTrip(pParent);
+
 
 	// Graph form should be a full-blown top-level window...
 	m_pGraphForm = new qjackctlGraphForm(pParent, wflags);
 
 	// Setup form is kind of special (modeless dialog).
 	m_pSetupForm = new qjackctlSetupForm(this);
+
+    /*
     QJackTrip * l_QJackTrip = m_pSetupForm->getQJackTrip();
 
     QObject::connect(m_ui.JackTripStartToolButton, &QPushButton::released, l_QJackTrip, &QJackTrip::start);
     QObject::connect(m_ui.JackTripStopToolButton, &QPushButton::released, l_QJackTrip, &QJackTrip::stop);
+    */
+
+    QObject::connect(m_pQJackTrip,
+        SIGNAL(signalHide()),
+        SLOT(showQJackTrip()));
+
+    QObject::connect(m_ui.QJackTripToolButton,
+        SIGNAL(clicked()),
+        SLOT(showQJackTrip()));
+
+    m_ui.QJackTripToolButton->setEnabled(false);
+
     /*
     QObject::connect(m_ui.JackTripStartToolButton,
         SIGNAL(clicked()),
@@ -1073,6 +1092,8 @@ bool qjackctlMainForm::queryClose (void)
 			m_pGraphForm->close();
 		if (m_pSetupForm)
 			m_pSetupForm->close();
+        if(m_pQJackTrip)
+            m_pQJackTrip->close();
 	#if 0//CONFIG_SYSTEM_TRAY
 		// And the system tray icon too.
 		if (m_pSystemTray)
@@ -1742,6 +1763,9 @@ void qjackctlMainForm::jackStarted (void)
 			.arg(quint64(m_pJack->pid())));
 	}
 
+    //TODO
+    m_ui.QJackTripToolButton->setEnabled(true);
+
 #ifdef CONFIG_DBUS
 	// Special for D-BUS control....
 	if (m_pDBusControl) {
@@ -1828,6 +1852,7 @@ void qjackctlMainForm::jackCleanup (void)
 	// Reset server name.
 	m_pSetup->sServerName.clear();
 
+    m_ui.QJackTripToolButton->setEnabled(false);
 	// Stabilize final server state...
 	jackStabilize();
 }
@@ -2168,11 +2193,10 @@ void qjackctlMainForm::updateButtons (void)
 		m_ui.StopToolButton->show();
 		m_ui.MessagesStatusToolButton->show();
 		m_ui.SessionToolButton->show();
-		m_ui.ConnectionsToolButton->setVisible(!m_pSetup->bGraphButton);
+//		m_ui.ConnectionsToolButton->setVisible(!m_pSetup->bGraphButton);
 		m_ui.GraphToolButton->setVisible(m_pSetup->bGraphButton);
 		m_ui.PatchbayToolButton->show();
-        m_ui.JackTripStartToolButton->show();
-        m_ui.JackTripStopToolButton->show();
+        m_ui.QJackTripToolButton->show();
 
 	} else {
 		m_ui.StartToolButton->hide();
@@ -2180,10 +2204,9 @@ void qjackctlMainForm::updateButtons (void)
 		m_ui.MessagesStatusToolButton->hide();
 		m_ui.SessionToolButton->hide();
 		m_ui.GraphToolButton->hide();
-		m_ui.ConnectionsToolButton->hide();
+//		m_ui.ConnectionsToolButton->hide();
 		m_ui.PatchbayToolButton->hide();
-        m_ui.JackTripStartToolButton->hide();
-        m_ui.JackTripStopToolButton->hide();
+        m_ui.QJackTripToolButton->hide();
 	}
 
 	if (m_pSetup->bRightButtons) {
@@ -2221,14 +2244,13 @@ void qjackctlMainForm::updateButtons (void)
 	m_ui.StopToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.MessagesStatusToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.SessionToolButton->setToolButtonStyle(toolButtonStyle);
-	m_ui.ConnectionsToolButton->setToolButtonStyle(toolButtonStyle);
+//	m_ui.ConnectionsToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.GraphToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.PatchbayToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.QuitToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.SetupToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.AboutToolButton->setToolButtonStyle(toolButtonStyle);
-    m_ui.JackTripStartToolButton->setToolButtonStyle(toolButtonStyle);
-    m_ui.JackTripStopToolButton->setToolButtonStyle(toolButtonStyle);
+    m_ui.QJackTripToolButton->setToolButtonStyle(toolButtonStyle);
 
 	adjustSize();
 }
@@ -2397,8 +2419,8 @@ void qjackctlMainForm::stabilizeForm (void)
 		m_pSessionForm && m_pSessionForm->isVisible());
 	m_ui.GraphToolButton->setChecked(
 		m_pGraphForm && m_pGraphForm->isVisible());
-	m_ui.ConnectionsToolButton->setChecked(
-		m_pConnectionsForm && m_pConnectionsForm->isVisible());
+//	m_ui.ConnectionsToolButton->setChecked(
+//		m_pConnectionsForm && m_pConnectionsForm->isVisible());
 	m_ui.PatchbayToolButton->setChecked(
 		m_pPatchbayForm && m_pPatchbayForm->isVisible());
 	m_ui.SetupToolButton->setChecked(
@@ -3461,6 +3483,23 @@ void qjackctlMainForm::showSetupForm (void)
 	}
 
 	updateContextMenu();
+}
+
+// Setup dialog requester slot.
+void qjackctlMainForm::showQJackTrip (void)
+{
+    if (m_pQJackTrip) {
+    //	m_pSetup->saveWidgetGeometry(m_pSetupForm);
+        if (m_pQJackTrip->isVisible()) {
+            m_pQJackTrip->hide();
+        } else {
+            m_pQJackTrip->show();
+            m_pQJackTrip->raise();
+            m_pQJackTrip->activateWindow();
+        }
+    }
+
+    //updateContextMenu();
 }
 
 

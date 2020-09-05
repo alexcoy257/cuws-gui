@@ -25,6 +25,7 @@
 #include "ui_qjackctlMainForm.h"
 
 #include "qjackctlSetup.h"
+#include "qjacktrip/src/qjacktrip.h"
 
 #include <QProcess>
 #include <QTime>
@@ -145,6 +146,7 @@ public slots:
 
 	void showSetupForm();
 	void showAboutForm();
+    void showQJackTrip();
 
 	void resetXrunStats();
 
@@ -366,6 +368,7 @@ private:
 	qjackctlPatchbayForm    *m_pPatchbayForm;
 	qjackctlGraphForm       *m_pGraphForm;
 	qjackctlSetupForm       *m_pSetupForm;
+    QJackTrip               *m_pQJackTrip;
 
 	qjackctlPatchbayRack *m_pPatchbayRack;
 

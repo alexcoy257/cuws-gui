@@ -1,6 +1,6 @@
 # qjackctl.pro
 #
-TARGET = qjackctl
+TARGET = liverehearsal
 
 TEMPLATE = app
 CONFIG += app_bundle
