@@ -1,11 +1,11 @@
 # qjackctl.pro
 #
-TARGET = liverehearsal
+TARGET = LiveRehearsal
 
 TEMPLATE = app
 CONFIG += app_bundle
 INCLUDEPATH += .
-QMAKE_INFO_PLIST = $$PWD/Info.plist
+
 
 include(src.pri)
 
@@ -45,8 +45,11 @@ macx {
   message(Building on MAC OS X)
   QMAKE_CXXFLAGS += -D__MACOSX_CORE__ #-D__UNIX_JACK__ #RtAudio Flags
   QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
+  QMAKE_INFO_PLIST = $$PWD/Info.plist
+  ICON = images/Qjackctl.icns
+  OTHER_FILES += MyAppInfo.plist
   #QMAKE_MAC_SDK = macosx10.9
-  CONFIG -= app_bundle
+  #CONFIG -= app_bundle
   #CONFIG += x86 #ppc #### If you have both libraries installed, you
   # can change between 32bits (x86) or 64bits(x86_64) Change this to go back to 32 bits (x86)
   LIBS += -framework CoreAudio -framework CoreFoundation
