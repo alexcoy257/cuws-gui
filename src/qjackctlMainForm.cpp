@@ -413,6 +413,13 @@ qjackctlMainForm::qjackctlMainForm (
 {
 	// Setup UI struct...
 	m_ui.setupUi(this);
+    m_ui.SessionToolButton->setVisible(false);
+    m_ui.PatchbayToolButton->setVisible(false);
+    m_ui.RewindToolButton->setVisible(false);
+    m_ui.BackwardToolButton->setVisible(false);
+    m_ui.PlayToolButton->setVisible(false);
+    m_ui.PauseToolButton->setVisible(false);
+    m_ui.ForwardToolButton->setVisible(false);
 
 	// Pseudo-singleton reference setup.
 	g_pMainForm = this;
@@ -2192,10 +2199,10 @@ void qjackctlMainForm::updateButtons (void)
 		m_ui.StartToolButton->show();
 		m_ui.StopToolButton->show();
 		m_ui.MessagesStatusToolButton->show();
-		m_ui.SessionToolButton->show();
+//		m_ui.SessionToolButton->show();
 //		m_ui.ConnectionsToolButton->setVisible(!m_pSetup->bGraphButton);
 		m_ui.GraphToolButton->setVisible(m_pSetup->bGraphButton);
-		m_ui.PatchbayToolButton->show();
+//		m_ui.PatchbayToolButton->show();
         m_ui.QJackTripToolButton->show();
 
 	} else {
@@ -2225,11 +2232,11 @@ void qjackctlMainForm::updateButtons (void)
 	}
 
 	if (m_pSetup->bLeftButtons || m_pSetup->bTransportButtons) {
-		m_ui.RewindToolButton->show();
-		m_ui.BackwardToolButton->show();
-		m_ui.PlayToolButton->show();
-		m_ui.PauseToolButton->show();
-		m_ui.ForwardToolButton->show();
+//		m_ui.RewindToolButton->show();
+//		m_ui.BackwardToolButton->show();
+//		m_ui.PlayToolButton->show();
+//		m_ui.PauseToolButton->show();
+//		m_ui.ForwardToolButton->show();
 	} else {
 		m_ui.RewindToolButton->hide();
 		m_ui.BackwardToolButton->hide();
@@ -3852,9 +3859,11 @@ void qjackctlMainForm::updateTitleStatus (void)
 	if (!m_pSetup->bLeftButtons  ||
 		!m_pSetup->bRightButtons ||
 		!m_pSetup->bTextLabels) {
-		sTitle = QJACKCTL_SUBTITLE0;
+//		sTitle = QJACKCTL_SUBTITLE0;
+        sTitle = "LiveRehearsal";
 	} else {
-		sTitle = QJACKCTL_SUBTITLE1;
+//		sTitle = QJACKCTL_SUBTITLE1;
+        sTitle = "LiveRehearsal";
 	}
 
 	sTitle += " [" + m_pSetup->sDefPreset + "] ";

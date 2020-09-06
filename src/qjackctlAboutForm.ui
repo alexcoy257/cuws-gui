@@ -26,18 +26,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>520</width>
-    <height>280</height>
+    <width>532</width>
+    <height>250</height>
    </rect>
   </property>
   <property name="font">
    <font/>
   </property>
   <property name="windowTitle">
-   <string>About</string>
+   <string>About LiveRehearsal</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="qjackctl.qrc">:/images/about1.png</iconset>
+   <iconset resource="qjackctl.qrc">
+    <normaloff>:/images/about1.png</normaloff>:/images/about1.png</iconset>
   </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
@@ -58,7 +59,7 @@
    <property name="spacing">
     <number>4</number>
    </property>
-   <item row="2" column="2">
+   <item row="2" column="3">
     <spacer>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -70,13 +71,6 @@
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="2" column="1">
-    <widget class="QPushButton" name="ClosePushButton">
-     <property name="text">
-      <string>&amp;Close</string>
-     </property>
-    </widget>
    </item>
    <item row="2" column="0">
     <widget class="QToolButton" name="AboutQtButton">
@@ -90,36 +84,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="qjackctl.qrc">:/images/qtlogo1.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <spacer>
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>8</width>
-       <height>8</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="0" column="1" rowspan="2" colspan="2">
-    <widget class="QTextBrowser" name="AboutTextView">
-     <property name="lineWidth">
-      <number>1</number>
-     </property>
-     <property name="undoRedoEnabled">
-      <bool>false</bool>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-     <property name="openExternalLinks">
-      <bool>true</bool>
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/qtlogo1.png</normaloff>:/images/qtlogo1.png</iconset>
      </property>
     </widget>
    </item>
@@ -151,11 +117,95 @@
      </property>
     </widget>
    </item>
+   <item row="2" column="2">
+    <widget class="QPushButton" name="ClosePushButton">
+     <property name="text">
+      <string>&amp;Close</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <spacer>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>8</width>
+       <height>8</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="1" rowspan="2" colspan="3">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>LiveRehearsal</string>
+      </attribute>
+      <widget class="QTextBrowser" name="textBrowser">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>481</width>
+         <height>181</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;&lt;br /&gt;LiveRehearsal&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version:&lt;span style=&quot; font-weight:600;&quot;&gt; 0.1.0&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;LiveRehearsal is the GUI fusion of QJackCtl and QJackTrip.&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Website: &lt;a href=&quot;https://github.com/alexcoy257/cuws-gui&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://github.com/alexcoy257/cuws-gui&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;This program is free software; you can redistribute it and/or modify it&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;under the terms of the GNU General Public License version 2 or later. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>QJackCtl</string>
+      </attribute>
+      <widget class="QTextBrowser" name="AboutTextView">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>481</width>
+         <height>181</height>
+        </rect>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <property name="undoRedoEnabled">
+        <bool>false</bool>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="openExternalLinks">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
   </layout>
  </widget>
  <layoutdefault spacing="4" margin="4"/>
  <tabstops>
-  <tabstop>AboutTextView</tabstop>
   <tabstop>AboutQtButton</tabstop>
   <tabstop>ClosePushButton</tabstop>
  </tabstops>

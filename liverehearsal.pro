@@ -1,4 +1,4 @@
-# qjackctl.pro
+# liverehearsal.pro
 #
 TEMPLATE = subdirs
 SUBDIRS = src

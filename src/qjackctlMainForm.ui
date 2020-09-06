@@ -36,6 +36,9 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
   <property name="windowIcon">
    <iconset resource="qjackctl.qrc">
     <normaloff>:/images/qjackctl.png</normaloff>:/images/qjackctl.png</iconset>
@@ -677,45 +680,10 @@
       <enum>Qt::TabFocus</enum>
      </property>
      <property name="toolTip">
-      <string>Show/hide the connections window</string>
+      <string>Open the JackTrip interface</string>
      </property>
      <property name="text">
-      <string>Jacktrip</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <property name="toolButtonStyle">
-      <enum>Qt::ToolButtonTextBesideIcon</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QToolButton" name="SessionToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>32767</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Show/hide the session management window</string>
-     </property>
-     <property name="text">
-      <string>S&amp;ession</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/session1.png</normaloff>:/images/session1.png</iconset>
+      <string>JackTrip</string>
      </property>
      <property name="checkable">
       <bool>true</bool>
@@ -781,7 +749,7 @@
       <enum>Qt::TabFocus</enum>
      </property>
      <property name="toolTip">
-      <string>Show/hide the graph window</string>
+      <string>Allows the user to manually select input and output devices</string>
      </property>
      <property name="text">
       <string>&amp;Graph</string>
@@ -824,6 +792,41 @@
      <property name="icon">
       <iconset resource="qjackctl.qrc">
        <normaloff>:/images/patchbay1.png</normaloff>:/images/patchbay1.png</iconset>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QToolButton" name="SessionToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32767</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Show/hide the session management window</string>
+     </property>
+     <property name="text">
+      <string>S&amp;ession</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/session1.png</normaloff>:/images/session1.png</iconset>
      </property>
      <property name="checkable">
       <bool>true</bool>

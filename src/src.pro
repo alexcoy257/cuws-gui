@@ -18,6 +18,22 @@ include(src.pri)
 # for plugins
 INCLUDEPATH += qjacktrip/faust-src-lair/stk
 
+win32 {
+  message(Building on win32)
+#cc  CONFIG += x86 console
+  CONFIG += c++11 console
+  INCLUDEPATH += "C:\Program Files (x86)\Jack\includes"
+  LIBS += "C:\Program Files (x86)\Jack\lib\libjack64.lib"
+  LIBS += "C:\Program Files (x86)\Jack\lib\libjackserver64.lib"
+#cc  QMAKE_CXXFLAGS += -D__WINDOWS_ASIO__ #-D__UNIX_JACK__ #RtAudio Flags
+  #QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++ -lpthread
+  LIBS += -lWs2_32 #cc -lOle32 #needed by rtaudio/asio
+  DEFINES += __WIN_32__
+  DEFINES += _WIN32_WINNT=0x0600 #needed for inet_pton
+  DEFINES += WIN32_LEAN_AND_MEAN
+#cc    DEFINES -= UNICODE #RtAudio for Qt
+}
+
 !win32 {
   INCLUDEPATH+=/usr/local/include
 # wair needs stk, can be had from linux this way
@@ -265,7 +281,7 @@ unix {
 }
 
 # XML/DOM support
-QT += widgets xml
+QT += widgets xml network
 
 win32 {
 	CONFIG += static
