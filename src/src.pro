@@ -5,6 +5,7 @@ TARGET = liverehearsal
 TEMPLATE = app
 CONFIG += app_bundle
 INCLUDEPATH += .
+QMAKE_INFO_PLIST = $$PWD/Info.plist
 
 include(src.pri)
 
