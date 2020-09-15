@@ -1,6 +1,7 @@
 Makefile
 config.*
 configure
+#windows_sample_config/*
 *.m4
 *.mak
 *.spec
