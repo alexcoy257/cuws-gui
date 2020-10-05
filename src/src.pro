@@ -284,6 +284,5 @@ unix {
 # XML/DOM support
 QT += widgets xml network
 
-win32 {
-	CONFIG += static
-}
+
+CONFIG += qt static
