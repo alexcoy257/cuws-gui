@@ -27,6 +27,9 @@
 #include "qjackctlSetup.h"
 #include "qjacktrip/src/qjacktrip.h"
 
+//<<>>
+#include "LiveRehearsalForm.h"
+
 #include <QProcess>
 #include <QTime>
 #include <QMenu>
@@ -53,6 +56,7 @@ class qjackctlPatchbayRack;
 class qjackctlGraphForm;
 class qjackctlGraphPort;
 class qjackctlPortItem;
+
 
 #ifdef CONFIG_SYSTEM_TRAY
 class qjackctlSystemTray;
@@ -369,6 +373,9 @@ private:
 	qjackctlGraphForm       *m_pGraphForm;
 	qjackctlSetupForm       *m_pSetupForm;
     QJackTrip               *m_pQJackTrip;
+
+    //<<>>
+    LiveRehearsalForm       *m_pLiveRehearsalForm;
 
 	qjackctlPatchbayRack *m_pPatchbayRack;
 

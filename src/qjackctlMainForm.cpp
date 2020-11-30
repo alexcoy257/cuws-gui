@@ -38,7 +38,8 @@
 
 #include "qjackctlJackGraph.h"
 
-
+//<<>>
+#include "LiveRehearsalForm.h"
 
 #ifdef CONFIG_ALSA_SEQ
 #include "qjackctlAlsaGraph.h"
@@ -472,6 +473,9 @@ qjackctlMainForm::qjackctlMainForm (
 	m_pSetupForm       = nullptr;
     m_pQJackTrip       = nullptr;
 
+    //<<>>
+    m_pLiveRehearsalForm = nullptr;
+
 	// Patchbay rack can be readily created.
 	m_pPatchbayRack = new qjackctlPatchbayRack();
 
@@ -711,6 +715,9 @@ bool qjackctlMainForm::setup ( qjackctlSetup *pSetup )
 	m_pPatchbayForm       = new qjackctlPatchbayForm       (pParent, wflags);
     m_pQJackTrip          = new QJackTrip(pParent);
 
+    //<<>>
+    m_pLiveRehearsalForm  = new LiveRehearsalForm(pParent);
+    m_pLiveRehearsalForm->show();
 
 	// Graph form should be a full-blown top-level window...
 	m_pGraphForm = new qjackctlGraphForm(pParent, wflags);
@@ -3513,7 +3520,7 @@ void qjackctlMainForm::showQJackTrip (void)
 // About dialog requester slot.
 void qjackctlMainForm::showAboutForm (void)
 {
-	qjackctlAboutForm(this).exec();
+    qjackctlAboutForm(this).exec();
 }
 
 

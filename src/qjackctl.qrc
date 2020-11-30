@@ -115,5 +115,8 @@
   <file>images/formSave.png</file>
   <file>images/itemReset.png</file>
   <file>images/qtlogo1.png</file>
+  <file>images/status_led_green.png</file>
+  <file>images/status_led_red.png</file>
+  <file>images/question_mark.png</file>
  </qresource>
 </RCC>

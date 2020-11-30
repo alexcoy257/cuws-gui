@@ -26,7 +26,7 @@ win32 {
   LIBS += "C:\Program Files (x86)\Jack\lib\libjack64.lib"
   LIBS += "C:\Program Files (x86)\Jack\lib\libjackserver64.lib"
 #cc  QMAKE_CXXFLAGS += -D__WINDOWS_ASIO__ #-D__UNIX_JACK__ #RtAudio Flags
-  QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++ -lpthread
+  QMAKE_LFLAGS += -static #-static-libgcc -static-libstdc++ -lpthread
   LIBS += -lWs2_32 #cc -lOle32 #needed by rtaudio/asio
   DEFINES += __WIN_32__
   DEFINES += _WIN32_WINNT=0x0600 #needed for inet_pton
@@ -113,19 +113,22 @@ linux-g++-64 {
   }
 
 
-SOURCES += $$files(qjacktrip/src/*.cpp, true)
+SOURCES += $$files(qjacktrip/src/*.cpp, true) \
+    LiveRehearsalForm.cpp
 SOURCES -=  qjacktrip/src/JackTripThread.cpp \
             qjacktrip/src/main.cpp \
             qjacktrip/src/RtAudioInterface.cpp \
             qjacktrip/src/NetKS.cpp \
             qjacktrip/src/jacktrip_tests.cpp
-HEADERS += $$files(qjacktrip/src/*.h, true)
+HEADERS += $$files(qjacktrip/src/*.h, true) \
+    LiveRehearsalForm.h
 HEADERS -=  qjacktrip/src/JackTripThread.h \
             qjacktrip/src/RtAudioInterface.h \
             qjacktrip/src/NetKS.h \
             qjacktrip/src/jacktrip_tests.h
 
-FORMS += qjacktrip/src/qjacktrip.ui qjacktrip/src/about.ui qjacktrip/src/messageDialog.ui
+FORMS += qjacktrip/src/qjacktrip.ui qjacktrip/src/about.ui qjacktrip/src/messageDialog.ui \
+    LiveRehearsalForm.ui
 RESOURCES += qjacktrip/src/qjacktrip.qrc
 
 
@@ -224,7 +227,7 @@ FORMS += \
 	qjackctlSessionForm.ui \
 	qjackctlSetupForm.ui \
 	qjackctlPaletteForm.ui \
-	qjackctlSocketForm.ui
+        qjackctlSocketForm.ui
 
 RESOURCES += \
 	qjackctl.qrc
