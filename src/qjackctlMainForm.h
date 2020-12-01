@@ -29,6 +29,7 @@
 
 //<<>>
 #include "LiveRehearsalForm.h"
+#include <QDirIterator>
 
 #include <QProcess>
 #include <QTime>
@@ -198,6 +199,9 @@ protected slots:
 
 	void activatePresetsMenu(QAction *);
 	void activatePreset(int);
+
+    void startStream();
+    void viewStream();
 
 	void quitMainForm();
 
@@ -376,6 +380,11 @@ private:
 
     //<<>>
     LiveRehearsalForm       *m_pLiveRehearsalForm;
+    QProcess                *m_pStartProcess;
+    QProcess                *m_pViewProcess;
+
+    QString m_sStartDir;
+    QString m_sViewDir;
 
 	qjackctlPatchbayRack *m_pPatchbayRack;
 

@@ -26,8 +26,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>525</width>
-    <height>138</height>
+    <width>527</width>
+    <height>152</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -59,268 +59,6 @@
    <property name="spacing">
     <number>4</number>
    </property>
-   <item row="0" column="1">
-    <widget class="QToolButton" name="StopToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>32767</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Stop the JACK server</string>
-     </property>
-     <property name="text">
-      <string>S&amp;top Jack</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/stop1.png</normaloff>:/images/stop1.png</iconset>
-     </property>
-     <property name="toolButtonStyle">
-      <enum>Qt::ToolButtonTextBesideIcon</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="7">
-    <widget class="QToolButton" name="SetupToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>32767</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Show settings and options dialog</string>
-     </property>
-     <property name="text">
-      <string>Set&amp;up...</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/setup1.png</normaloff>:/images/setup1.png</iconset>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <property name="toolButtonStyle">
-      <enum>Qt::ToolButtonTextBesideIcon</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="2">
-    <widget class="QToolButton" name="RewindToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Rewind transport</string>
-     </property>
-     <property name="text">
-      <string>&amp;Rewind</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/rewind1.png</normaloff>:/images/rewind1.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="4">
-    <widget class="QToolButton" name="PlayToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Start transport rolling</string>
-     </property>
-     <property name="text">
-      <string>&amp;Play</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/play1.png</normaloff>:/images/play1.png</iconset>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="3">
-    <widget class="QToolButton" name="BackwardToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Backward transport</string>
-     </property>
-     <property name="text">
-      <string>&amp;Backward</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/backward1.png</normaloff>:/images/backward1.png</iconset>
-     </property>
-     <property name="autoRepeat">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="7">
-    <widget class="QToolButton" name="QuitToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>32767</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Quit processing and exit</string>
-     </property>
-     <property name="text">
-      <string>&amp;Quit</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/quit1.png</normaloff>:/images/quit1.png</iconset>
-     </property>
-     <property name="toolButtonStyle">
-      <enum>Qt::ToolButtonTextBesideIcon</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QToolButton" name="StartToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>32767</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Start the JACK server</string>
-     </property>
-     <property name="text">
-      <string>&amp;1. Start Jack</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/start1.png</normaloff>:/images/start1.png</iconset>
-     </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <property name="toolButtonStyle">
-      <enum>Qt::ToolButtonTextBesideIcon</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="5">
-    <widget class="QToolButton" name="PauseToolButton">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Stop transport rolling</string>
-     </property>
-     <property name="text">
-      <string>Pa&amp;use</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/pause1.png</normaloff>:/images/pause1.png</iconset>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="2" rowspan="3" colspan="5">
     <widget class="QFrame" name="StatusDisplayFrame">
      <property name="sizePolicy">
@@ -598,101 +336,6 @@
      </layout>
     </widget>
    </item>
-   <item row="3" column="6">
-    <widget class="QToolButton" name="ForwardToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Forward transport</string>
-     </property>
-     <property name="text">
-      <string>&amp;Forward</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/forward1.png</normaloff>:/images/forward1.png</iconset>
-     </property>
-     <property name="autoRepeat">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="7">
-    <widget class="QToolButton" name="AboutToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>32767</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Show information about this application</string>
-     </property>
-     <property name="text">
-      <string>Ab&amp;out...</string>
-     </property>
-     <property name="icon">
-      <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/about1.png</normaloff>:/images/about1.png</iconset>
-     </property>
-     <property name="toolButtonStyle">
-      <enum>Qt::ToolButtonTextBesideIcon</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="2">
-    <widget class="QToolButton" name="QJackTripToolButton">
-     <property name="minimumSize">
-      <size>
-       <width>28</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>32767</width>
-       <height>28</height>
-      </size>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="toolTip">
-      <string>Open the JackTrip interface</string>
-     </property>
-     <property name="text">
-      <string>JackTrip</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <property name="toolButtonStyle">
-      <enum>Qt::ToolButtonTextBesideIcon</enum>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="0">
     <widget class="QToolButton" name="MessagesStatusToolButton">
      <property name="minimumSize">
@@ -731,8 +374,43 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
-    <widget class="QToolButton" name="GraphToolButton">
+   <item row="3" column="5">
+    <widget class="QToolButton" name="PauseToolButton">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Stop transport rolling</string>
+     </property>
+     <property name="text">
+      <string>Pa&amp;use</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/pause1.png</normaloff>:/images/pause1.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="7">
+    <widget class="QToolButton" name="SetupToolButton">
      <property name="minimumSize">
       <size>
        <width>28</width>
@@ -749,17 +427,248 @@
       <enum>Qt::TabFocus</enum>
      </property>
      <property name="toolTip">
-      <string>Allows the user to manually select input and output devices</string>
+      <string>Show settings and options dialog</string>
      </property>
      <property name="text">
-      <string>&amp;Graph</string>
+      <string>Set&amp;up...</string>
      </property>
      <property name="icon">
       <iconset resource="qjackctl.qrc">
-       <normaloff>:/images/graph1.png</normaloff>:/images/graph1.png</iconset>
+       <normaloff>:/images/setup1.png</normaloff>:/images/setup1.png</iconset>
      </property>
      <property name="checkable">
       <bool>true</bool>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="7">
+    <widget class="QToolButton" name="AboutToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32767</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Show information about this application</string>
+     </property>
+     <property name="text">
+      <string>Ab&amp;out...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/about1.png</normaloff>:/images/about1.png</iconset>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="7">
+    <widget class="QToolButton" name="ViewStreamToolButton">
+     <property name="text">
+      <string>View Stream</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QToolButton" name="StopToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32767</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Stop the JACK server</string>
+     </property>
+     <property name="text">
+      <string>S&amp;top Jack</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/stop1.png</normaloff>:/images/stop1.png</iconset>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QToolButton" name="RewindToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Rewind transport</string>
+     </property>
+     <property name="text">
+      <string>&amp;Rewind</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/rewind1.png</normaloff>:/images/rewind1.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QToolButton" name="BackwardToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Backward transport</string>
+     </property>
+     <property name="text">
+      <string>&amp;Backward</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/backward1.png</normaloff>:/images/backward1.png</iconset>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="6">
+    <widget class="QToolButton" name="ForwardToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Forward transport</string>
+     </property>
+     <property name="text">
+      <string>&amp;Forward</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/forward1.png</normaloff>:/images/forward1.png</iconset>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QToolButton" name="PlayToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Start transport rolling</string>
+     </property>
+     <property name="text">
+      <string>&amp;Play</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/play1.png</normaloff>:/images/play1.png</iconset>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QToolButton" name="StartToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32767</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Start the JACK server</string>
+     </property>
+     <property name="text">
+      <string>&amp;1. Start Jack</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/start1.png</normaloff>:/images/start1.png</iconset>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
      </property>
      <property name="toolButtonStyle">
       <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -833,6 +742,111 @@
      </property>
      <property name="toolButtonStyle">
       <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="7">
+    <widget class="QToolButton" name="QuitToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32767</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Quit processing and exit</string>
+     </property>
+     <property name="text">
+      <string>&amp;Quit</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/quit1.png</normaloff>:/images/quit1.png</iconset>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QToolButton" name="GraphToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32767</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Allows the user to manually select input and output devices</string>
+     </property>
+     <property name="text">
+      <string>&amp;Graph</string>
+     </property>
+     <property name="icon">
+      <iconset resource="qjackctl.qrc">
+       <normaloff>:/images/graph1.png</normaloff>:/images/graph1.png</iconset>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QToolButton" name="QJackTripToolButton">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32767</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string>Open the JackTrip interface</string>
+     </property>
+     <property name="text">
+      <string>JackTrip</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextBesideIcon</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="6">
+    <widget class="QToolButton" name="StartStreamToolButton">
+     <property name="text">
+      <string>Start Stream</string>
      </property>
     </widget>
    </item>

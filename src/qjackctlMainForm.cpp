@@ -475,6 +475,8 @@ qjackctlMainForm::qjackctlMainForm (
 
     //<<>>
     m_pLiveRehearsalForm = nullptr;
+    m_pViewProcess       = nullptr;
+    m_pStartProcess      = nullptr;
 
 	// Patchbay rack can be readily created.
 	m_pPatchbayRack = new qjackctlPatchbayRack();
@@ -496,6 +498,55 @@ qjackctlMainForm::qjackctlMainForm (
 
 	// Whether to update context menu on next status refresh.
 	m_iMenuRefresh = 0;
+
+    //<<>>
+    QString NDIdir;
+    QString SCname;
+    QString SMname;
+
+
+#if (defined (Q_OS_WIN32))
+    NDIdir = qEnvironmentVariable("NDI_RUNTIME_DIR_V2");
+    if (NDIdir.isNull()) {
+        NDIdir = qEnvironmentVariable("PROGRAMFILES");
+    }
+    SCname = QString("ScanConverter2");
+    SMname = QString("StudioMonitor");
+#endif
+
+    // Not sure how to find the location of NDI in OsX
+    // Alex, I'm not sure what the identifiers for NDI Monitor or NDI Scan Converter would be
+#if (defined (Q_OS_OSX))
+        NDIdir = qEnvironmentVariable("");
+#endif
+
+    if (!NDIdir.isNull()) {
+        NDIdir = NDIdir + "/..";
+        QDirIterator iter(NDIdir, QDir::Files, QDirIterator::Subdirectories);
+        QString fileName;
+        while(iter.hasNext() )
+        {
+           iter.next();
+
+           fileName = iter.fileName();
+
+           // now I have to check if fileName indeed contains Studio Monitor or Scan Converter
+           if (fileName.contains(SCname)) {
+               m_sStartDir = iter.filePath().append("\"").prepend("\"");
+           }
+
+           if (fileName.contains(SMname)) {
+               m_sViewDir = iter.filePath().append("\"").prepend("\"");
+            }
+        }
+    }
+
+
+
+
+
+
+
 
 	// Whether we've Qt::Tool flag (from bKeepOnTop),
 	// this is actually the main last application window...
@@ -598,17 +649,16 @@ qjackctlMainForm::qjackctlMainForm (
 		SIGNAL(clicked()),
 		SLOT(transportForward()));
 
+    //<<>>
+    QObject::connect(m_ui.StartStreamToolButton,
+            SIGNAL(clicked()),
+            SLOT(startStream()));
+    QObject::connect(m_ui.ViewStreamToolButton,
+            SIGNAL(clicked()),
+            SLOT(viewStream()));
 
-    /*
-    QObject::connect(m_ui.JackTripStartToolButton,
-        SIGNAL(clicked()),
-        SLOT(QJackTrip::start()));
-    QObject::connect(m_ui.JackTripStopToolButton,
-        SIGNAL(clicked()),
-        SLOT(QJackTrip::stop()));
-*/
+
 }
-
 
 // Destructor.
 qjackctlMainForm::~qjackctlMainForm (void)
@@ -717,7 +767,7 @@ bool qjackctlMainForm::setup ( qjackctlSetup *pSetup )
 
     //<<>>
     m_pLiveRehearsalForm  = new LiveRehearsalForm(pParent);
-    m_pLiveRehearsalForm->show();
+    //m_pLiveRehearsalForm->show();
 
 	// Graph form should be a full-blown top-level window...
 	m_pGraphForm = new qjackctlGraphForm(pParent, wflags);
@@ -2226,9 +2276,13 @@ void qjackctlMainForm::updateButtons (void)
 	if (m_pSetup->bRightButtons) {
 		m_ui.QuitToolButton->show();
 		m_ui.SetupToolButton->show();
+        m_ui.StartStreamToolButton->show();
+        m_ui.ViewStreamToolButton->show();
 	} else {
 		m_ui.QuitToolButton->hide();
 		m_ui.SetupToolButton->hide();
+        m_ui.StartStreamToolButton->hide();
+        m_ui.ViewStreamToolButton->hide();
 	}
 
 	if (m_pSetup->bRightButtons &&
@@ -2265,6 +2319,8 @@ void qjackctlMainForm::updateButtons (void)
 	m_ui.SetupToolButton->setToolButtonStyle(toolButtonStyle);
 	m_ui.AboutToolButton->setToolButtonStyle(toolButtonStyle);
     m_ui.QJackTripToolButton->setToolButtonStyle(toolButtonStyle);
+    m_ui.StartStreamToolButton->setToolButtonStyle(toolButtonStyle);
+    m_ui.ViewStreamToolButton->setToolButtonStyle(toolButtonStyle);
 
 	adjustSize();
 }
@@ -4857,6 +4913,28 @@ bool qjackctlMainForm::resetBuffSize ( jack_nframes_t nframes )
 	// May reset some stats...
 	resetXrunStats();
 	return true;
+}
+
+
+// Start the NDI streaming tool
+void qjackctlMainForm::startStream()
+{
+    //qDebug() << m_sStartDir;
+        if (!m_sStartDir.isNull()) {
+        m_pStartProcess = new QProcess(this); 
+        m_pStartProcess->start(m_sStartDir);
+        }
+}
+
+
+// Start the NDI stream viewing tool
+void qjackctlMainForm::viewStream()
+{
+    //qDebug() << m_sViewDir;
+        if (!m_sViewDir.isNull()) {
+        m_pViewProcess = new QProcess(this);
+        m_pViewProcess->start(m_sViewDir);
+        }
 }
 
 // end of qjackctlMainForm.cpp
