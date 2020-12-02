@@ -516,10 +516,23 @@ qjackctlMainForm::qjackctlMainForm (
 
     // Not sure how to find the location of NDI in OsX
     // Alex, I'm not sure what the identifiers for NDI Monitor or NDI Scan Converter would be
-#if (defined (Q_OS_OSX))
+#ifdef __MAC_OSX__
         NDIdir = qEnvironmentVariable("");
+				SMname = QString("Video Monitor");
+				QFileInfo * check_file = new QFileInfo("/Applications/NewTek\ NDI\ Video\ Monitor.app");
+				if(check_file->exists()){
+					m_sViewDir = "/Applications/NewTek\ NDI\ Video\ Monitor.app";
+				}
+				delete check_file;
+				check_file = new QFileInfo("/Applications/NewTek\ NDI\ Scan\ Converter.app");
+				//QFileInfo check_file("/Applications/NewTek\ NDI\ Scan\ Converter.app");
+				if(check_file->exists()){
+					m_sStartDir = "/Applications/NewTek\ NDI\ Scan\ Converter.app";
+				}
+				delete check_file;
 #endif
 
+#ifdef __WIN_32__
     if (!NDIdir.isNull()) {
         NDIdir = NDIdir + "/..";
         QDirIterator iter(NDIdir, QDir::Files, QDirIterator::Subdirectories);
@@ -540,6 +553,7 @@ qjackctlMainForm::qjackctlMainForm (
             }
         }
     }
+#endif
 
 
 
@@ -4921,8 +4935,14 @@ void qjackctlMainForm::startStream()
 {
     //qDebug() << m_sStartDir;
         if (!m_sStartDir.isNull()) {
-        m_pStartProcess = new QProcess(this); 
-        m_pStartProcess->start(m_sStartDir);
+        m_pStartProcess = new QProcess(this);
+        m_pViewProcess = new QProcess(this);
+				#ifdef __WIN_32__
+        m_pViewProcess->start(m_sStartDir);
+				#endif
+				#ifdef __MAC_OSX__
+				m_pViewProcess->start("open", {m_sStartDir});
+				#endif
         }
 }
 
@@ -4933,7 +4953,12 @@ void qjackctlMainForm::viewStream()
     //qDebug() << m_sViewDir;
         if (!m_sViewDir.isNull()) {
         m_pViewProcess = new QProcess(this);
+				#ifdef __WIN_32__
         m_pViewProcess->start(m_sViewDir);
+				#endif
+				#ifdef __MAC_OSX__
+				m_pViewProcess->start("open", {m_sViewDir});
+				#endif
         }
 }
 

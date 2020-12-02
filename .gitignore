@@ -1,6 +1,7 @@
 Makefile
 config.*
 configure
+builddir
 #windows_sample_config/*
 *.m4
 *.mak

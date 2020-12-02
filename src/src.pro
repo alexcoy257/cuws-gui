@@ -61,7 +61,7 @@ INSTALLS += target
 macx {
   message(Building on MAC OS X)
   QMAKE_CXXFLAGS += -D__MACOSX_CORE__ #-D__UNIX_JACK__ #RtAudio Flags
-  QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.9
+  QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.13
   QMAKE_INFO_PLIST = $$PWD/Info.plist
   ICON = images/Qjackctl.icns
   OTHER_FILES += MyAppInfo.plist
@@ -115,6 +115,7 @@ linux-g++-64 {
 
 SOURCES += $$files(qjacktrip/src/*.cpp, true) \
     LiveRehearsalForm.cpp
+SOURCES += qjacktrip/src/NoNap.mm
 SOURCES -=  qjacktrip/src/JackTripThread.cpp \
             qjacktrip/src/main.cpp \
             qjacktrip/src/RtAudioInterface.cpp \
