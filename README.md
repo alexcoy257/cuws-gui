@@ -1,4 +1,4 @@
-QjackCtl - JACK Audio Connection Kit Qt GUI Interface
+# LiveRehearsal - A merge of QJackCtl and QJackTrip for connecting to JackTrip servers.
 -----------------------------------------------------
 
 QjackCtl is a simple Qt application to control the JACK sound server
